@@ -1,7 +1,8 @@
+
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'http://localhost:8080/api',
+  baseURL: 'https://smart-waste-bin-e143.onrender.com/api',
 });
 
 export const fetchBins = async () => {
@@ -33,19 +34,27 @@ export const fetchBinById = async (id) => {
 
 export const fetchBinHistory = async (id, hours = 24) => {
   try {
-    const response = await api.get(`/bins/${id}/history`, { params: { hours } });
+    const response = await api.get(`/bins/${id}/history`, {
+      params: { hours }
+    });
     return response.data;
   } catch (error) {
     console.error('Error fetching history:', error);
+
     // Mock history
     const history = [];
     let currentFill = Math.random() * 100;
-    for(let i=hours; i>=0; i--) {
+
+    for (let i = hours; i >= 0; i--) {
       history.push({
         timestamp: new Date(Date.now() - i * 3600000).toISOString(),
-        fillPercentage: Math.max(0, Math.min(100, currentFill + (Math.random() * 20 - 10)))
+        fillPercentage: Math.max(
+          0,
+          Math.min(100, currentFill + (Math.random() * 20 - 10))
+        )
       });
     }
+
     return history;
   }
 };
@@ -56,6 +65,7 @@ export const fetchDashboardStats = async () => {
     return response.data;
   } catch (error) {
     console.error('Error fetching stats:', error);
+
     return {
       totalBins: 10,
       activeBins: 10,
