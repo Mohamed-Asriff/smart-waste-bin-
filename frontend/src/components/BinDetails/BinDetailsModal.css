@@ -1,0 +1,454 @@
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  width: 90%;
+  max-width: 600px;
+  max-height: 90vh;
+  overflow-y: auto;
+  background: var(--bg-color);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.5);
+}
+
+.modal-header {
+  padding: 24px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.modal-header h2 {
+  margin: 0 0 4px 0;
+  color: var(--primary-color);
+}
+
+.modal-bin-id {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+}
+
+.close-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.close-btn:hover {
+  color: var(--text-main);
+}
+
+.modal-body {
+  padding: 24px;
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 16px;
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.875rem;
+  margin-bottom: 24px;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+}
+
+.modal-info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.info-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.info-label {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.info-value {
+  font-size: 1rem;
+  color: var(--text-main);
+}
+
+.fill-display {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 32px;
+}
+
+.fill-circle {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  border: 4px solid;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.fill-percentage {
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.fill-label {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  margin-top: 8px;
+}
+
+.chart-container h3 {
+  font-size: 1rem;
+  margin: 0 0 16px 0;
+  color: var(--text-main);
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.3s ease-out forwards;
+}
+
+/* IoT API Endpoint Section */
+.api-endpoint-section {
+  margin-bottom: 20px;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 230, 118, 0.15);
+  background: rgba(0, 230, 118, 0.04);
+  overflow: hidden;
+}
+
+.api-toggle-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 16px;
+  background: transparent;
+  border: none;
+  color: var(--text-main, #eee);
+  cursor: pointer;
+  transition: background 0.2s;
+  font-size: 0.9rem;
+  text-align: left;
+}
+
+.api-toggle-btn:hover {
+  background: rgba(0, 230, 118, 0.08);
+}
+
+.api-toggle-btn.active {
+  background: rgba(0, 230, 118, 0.06);
+  border-bottom: 1px solid rgba(0, 230, 118, 0.12);
+}
+
+.api-toggle-icon {
+  font-size: 0.75rem;
+  color: #00e676;
+  width: 12px;
+  flex-shrink: 0;
+}
+
+.api-toggle-label {
+  font-weight: 600;
+  color: #00e676;
+  white-space: nowrap;
+}
+
+.api-toggle-hint {
+  font-size: 0.8rem;
+  color: var(--text-muted, #888);
+  margin-left: auto;
+}
+
+.api-details {
+  padding: 16px;
+}
+
+.api-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  margin-bottom: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.api-method-badge {
+  background: linear-gradient(135deg, #00e676, #00c853);
+  color: #0a0a1a;
+  font-weight: 700;
+  font-size: 0.7rem;
+  padding: 4px 10px;
+  border-radius: 6px;
+  letter-spacing: 0.5px;
+  flex-shrink: 0;
+  text-transform: uppercase;
+}
+
+.api-url {
+  flex: 1;
+  font-family: 'Courier New', Consolas, monospace;
+  font-size: 0.82rem;
+  color: #80cbc4;
+  word-break: break-all;
+  background: transparent;
+  padding: 0;
+}
+
+.api-copy-btn {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: var(--text-muted, #aaa);
+  padding: 5px 12px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.api-copy-btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: var(--text-main, #eee);
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+.api-copy-btn.copied {
+  background: rgba(0, 230, 118, 0.15);
+  border-color: rgba(0, 230, 118, 0.3);
+  color: #00e676;
+}
+
+.api-payload-section {
+  margin-bottom: 14px;
+}
+
+.api-payload-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  font-size: 0.8rem;
+  color: var(--text-muted, #999);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.api-payload-code {
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 8px;
+  padding: 14px 16px;
+  margin: 0;
+  font-family: 'Courier New', Consolas, monospace;
+  font-size: 0.8rem;
+  color: #e0e0e0;
+  line-height: 1.6;
+  overflow-x: auto;
+  white-space: pre;
+}
+
+.api-notes {
+  padding: 10px 14px;
+  background: rgba(255, 183, 77, 0.06);
+  border: 1px solid rgba(255, 183, 77, 0.1);
+  border-radius: 8px;
+}
+
+.api-notes p {
+  margin: 0;
+  padding: 3px 0;
+  font-size: 0.78rem;
+  color: var(--text-muted, #aaa);
+  line-height: 1.5;
+}
+
+.api-notes strong {
+  color: #ffb74d;
+}
+
+.api-notes code {
+  background: rgba(0, 0, 0, 0.3);
+  padding: 1px 6px;
+  border-radius: 4px;
+  font-family: 'Courier New', Consolas, monospace;
+  font-size: 0.78rem;
+  color: #80cbc4;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-down {
+  animation: slideDown 0.25s ease-out forwards;
+}
+
+/* Delete Bin Button */
+.delete-section {
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: flex-end;
+}
+
+.delete-bin-btn {
+  background: transparent;
+  border: 1px solid #e74c3c;
+  color: #e74c3c;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-weight: 500;
+}
+
+.delete-bin-btn:hover {
+  background: #e74c3c;
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(231, 76, 60, 0.3);
+}
+
+/* Confirmation Dialog */
+.confirm-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+
+.confirm-dialog {
+  background: var(--bg-color, #1a1a2e);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 16px;
+  padding: 32px;
+  width: 90%;
+  max-width: 420px;
+  text-align: center;
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.6);
+}
+
+.confirm-icon {
+  font-size: 2.5rem;
+  margin-bottom: 12px;
+}
+
+.confirm-dialog h3 {
+  margin: 0 0 12px 0;
+  color: #e74c3c;
+  font-size: 1.25rem;
+}
+
+.confirm-dialog p {
+  color: var(--text-main, #eee);
+  font-size: 0.95rem;
+  margin: 0 0 8px 0;
+  line-height: 1.5;
+}
+
+.confirm-warning {
+  color: var(--text-muted, #999) !important;
+  font-size: 0.85rem !important;
+  margin-top: 4px !important;
+  margin-bottom: 20px !important;
+}
+
+.confirm-error {
+  color: #e74c3c !important;
+  font-size: 0.85rem !important;
+  background: rgba(231, 76, 60, 0.1);
+  padding: 8px 12px;
+  border-radius: 8px;
+  margin-bottom: 16px !important;
+}
+
+.confirm-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.confirm-cancel-btn {
+  padding: 10px 24px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: transparent;
+  color: var(--text-main, #eee);
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-weight: 500;
+}
+
+.confirm-cancel-btn:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.confirm-delete-btn {
+  padding: 10px 24px;
+  border-radius: 8px;
+  border: none;
+  background: #e74c3c;
+  color: #fff;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-weight: 600;
+}
+
+.confirm-delete-btn:hover:not(:disabled) {
+  background: #c0392b;
+  box-shadow: 0 4px 12px rgba(231, 76, 60, 0.4);
+}
+
+.confirm-cancel-btn:disabled,
+.confirm-delete-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
